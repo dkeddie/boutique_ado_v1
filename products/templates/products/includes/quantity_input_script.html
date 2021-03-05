@@ -10,7 +10,7 @@
     }
 
     // Disable minus' by default by calling function as soon as the page loads
-    var allQtyInput = $('.qty_input');
+    var allQtyInputs = $('.qty_input');
     for(var i=0; i<allQtyInputs.length; i++) {
         var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
