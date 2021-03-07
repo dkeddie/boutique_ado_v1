@@ -22,9 +22,8 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-        payload, sig_header, wh_secret 
+        payload, sig_header, wh_secret
         )
-        #wh_secret modified from endpoint_secret
     except ValueError as e:
         # Invalid payload
         return HttpResponse(status=400)
@@ -32,7 +31,6 @@ def webhook(request):
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
-        # Added to capture generic exceptions other than two Stripe has provided
         return HttpResponse(content=e, status=400)
 
     # Set up a webhook handler
