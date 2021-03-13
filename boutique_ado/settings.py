@@ -183,9 +183,8 @@ if 'USE_AWS' in os.environ:
     # Cache Contol - ok to cache static files for long time
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thus, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age-94608000',
+        'CacheControl': 'max-age=94608000',
     }
-
 
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'dkeddie-boutique-ado'
